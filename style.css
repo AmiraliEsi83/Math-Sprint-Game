@@ -1,0 +1,344 @@
+@import url("https://use.typekit.net/upm5glu.css");
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: caraque-solid,sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #fff;
+}
+
+body::before {
+  content: "";
+  background-size: contain;
+  background-image: url("https://AmiraliEsi83.github.io/math-sprint-game/math-background.jpg");
+  background-size: 30em;
+  background-repeat: repeat;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.4;
+}
+
+h1, h2 {
+  font-family: caraque-solid,sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+section {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 166, 0, 0.3);
+  text-align: center;
+}
+
+button {
+  border: none;
+  color: #fff;
+  padding: 1.5rem 2rem;
+  border-radius: 5px;
+  font-family: caraque-solid,sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+button:hover {
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 7px 10px -7px;
+          box-shadow: rgba(0, 0, 0, 0.25) 0px 7px 10px -7px;
+}
+
+.game-container {
+  position: relative;
+  min-height: 700px;
+  width: 570px;
+  color: #4040d0;
+  border: #ff621c solid 3px;
+  border-radius: 5px;
+  background-color: rgba(255, 166, 0, 0.3);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+          box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.game-container header {
+  background-color: #ff621c;
+  top: 0;
+  padding: 1rem 3rem;
+  font-size: 28px;
+  color: #fff;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.game-container .card {
+  width: 90%;
+  margin: 20px auto 10px;
+}
+
+.game-container .card .radio-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: #4040d0 2px solid;
+  border-radius: 5px;
+  padding: 1rem;
+  margin: 1rem 0;
+  cursor: pointer;
+}
+
+.game-container .card .radio-container label {
+  display: inline-block;
+  font-size: 22px;
+  letter-spacing: 2px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.game-container .card .radio-container input[type="radio"] {
+  opacity: 0;
+  cursor: pointer;
+  z-index: 12;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.game-container .card .radio-container .best-score {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 18px;
+}
+
+.game-container .card .start {
+  width: 100%;
+  background-color: #4040d0;
+}
+
+.game-container .card .start:hover {
+  background-color: #ff621c;
+}
+
+.game-container .card .countdown {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 35%;
+  font-size: 98px;
+}
+
+.game-container .card .item-container {
+  height: 500px;
+  overflow-y: scroll;
+  position: relative;
+}
+
+.game-container .card .item-container .selected-item {
+  background: #ffa600;
+  position: fixed;
+  margin: auto -28px;
+  top: 375px;
+  z-index: -1;
+  width: 564px;
+  height: 70px;
+}
+
+.game-container .card .item-container .item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 70px;
+  margin: 0 50px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.game-container .card .item-container::-webkit-scrollbar {
+  display: none;
+}
+
+.game-container .card .item-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.game-container .card .item-footer .wrong, .game-container .card .item-footer .right {
+  width: 45%;
+  margin: 0.5rem;
+}
+
+.game-container .card .item-footer .wrong:hover, .game-container .card .item-footer .right:hover {
+  -webkit-filter: brightness(120%);
+          filter: brightness(120%);
+}
+
+.game-container .card .item-footer .wrong {
+  background-color: #ff621c;
+}
+
+.game-container .card .item-footer .right {
+  background-color: #4040d0;
+}
+
+.game-container .card .score-container {
+  padding-top: 1rem;
+  line-height: 28px;
+  letter-spacing: 2px;
+}
+
+.game-container .card .score-container .title {
+  font-size: 48px;
+}
+
+.game-container .card .score-container .final-time {
+  font-size: 98px;
+  color: #ff621c;
+}
+
+.game-container .card .score-container .base-time {
+  font-weight: 400;
+}
+
+.game-container .card .score-container .penalty-time {
+  font-weight: 400;
+  background-color: #ffa600;
+  padding: 0.2rem;
+}
+
+.game-container .card .score-footer {
+  padding-top: 1rem;
+}
+
+.game-container .card .score-footer .play-again {
+  width: 100%;
+  background-color: #ff621c;
+}
+
+.game-container .card .score-footer .play-again:hover {
+  background-color: #4040d0;
+}
+
+.selected {
+  background-color: #ff621c;
+  color: #fff;
+}
+
+/* Game Page -------------------------- */
+.height-240 {
+  height: 200px;
+  width: 100%;
+}
+
+.height-500 {
+  height: 220px;
+  width: 100%;
+}
+
+@media screen and (max-width: 550px) {
+  button {
+    padding: 1rem;
+    font-size: 20px;
+  }
+  .game-container {
+    min-height: auto;
+  }
+  .game-container header {
+    padding: 0.5rem 1rem;
+    font-size: 22px;
+  }
+  .game-container .card .countdown {
+    margin-top: 35%;
+    font-size: 68px;
+    margin-bottom: 35%;
+  }
+  .game-container .card .item-container {
+    height: 400px;
+  }
+  .game-container .card .item-container .selected-item {
+    width: 100%;
+    top: 255px;
+    margin: auto -26px;
+  }
+  .game-container .card .item-container .item {
+    margin: 0 60px;
+  }
+  .game-container .card .item-footer .wrong, .game-container .card .item-footer .right {
+    width: 100%;
+  }
+  /* Game Page -------------------------- */
+  .height-240 {
+    height: 120px;
+    width: 100%;
+  }
+  .height-500 {
+    height: 210px;
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=style.css.map */
